@@ -18,7 +18,7 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "Waterfield Advisors Clone",
+  title: "Finask - Financial Services",
   description: "Wealth Management Hero Section",
 };
 

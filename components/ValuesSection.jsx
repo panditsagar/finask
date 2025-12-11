@@ -1,30 +1,35 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const values = [
   {
     id: 1,
     title: "Transparent & Trusted",
+    slug: "transparency",
     description: "We help you with the best plan and mutual fund recommendations that suit you and your goals. No hidden costs, no confusing language.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop", // Meeting/Trust
   },
   {
     id: 2,
     title: "Personal & Accessible",
+    slug: "caring",
     description: "Your dedicated financial guide will be available to answer, adapt, modify and customise your investment strategy on an ongoing basis.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop", // Personal interaction
   },
   {
     id: 3,
     title: "Flexible & Agile",
+    slug: "co-creation-of-wealth",
     description: "We tailor your investments to fit your life so you have the freedom to invest, withdraw, pause and scale on your terms.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop", // Team/Agile
   },
   {
     id: 4,
     title: "100% Secure",
+    slug: "customer-obsession",
     description: "Your data belongs to you. We don’t sell any personal info; and we always prioritise your interests — personal and financial — above all else.",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2670&auto=format&fit=crop", // Security/Tech
   },
@@ -65,8 +70,9 @@ export default function ValuesSection() {
               <p className="text-gray-100 text-md leading-relaxed mb-6 transition-opacity duration-500 delay-100">
                 {item.description}
               </p>
-              
-             
+               <Link href={`/values/${item.slug}`} className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 mt-4 flex items-center gap-2 text-white font-medium border-b border-white pb-1 hover:text-slate-900 hover:border-slate-900">
+                Read More <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         ))}

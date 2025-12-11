@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { valuesData } from "@/app/data/values";
 
 export default function Navbar({ isScrolled: externalIsScrolled, alwaysScrolled = false }) {
   const [internalIsScrolled, setInternalIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ export default function Navbar({ isScrolled: externalIsScrolled, alwaysScrolled 
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6">
-      <nav className={`relative flex items-center justify-between w-[95%] max-w-7xl backdrop-blur-md border rounded-full px-6 py-3 shadow-2xl transition-all duration-300 ${isScrolled ? "bg-white/90 border-gray-200/50" : "bg-white/10 border-white/10"}`}>
+      <nav className={`relative flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled ? "w-[95%] max-w-7xl bg-white/90 border-gray-200/50 border rounded-full px-6 py-3 shadow-2xl backdrop-blur-md" : "w-full max-w-[1440px] bg-transparent border-transparent border-0 rounded-none px-10 py-6 shadow-none backdrop-blur-none"}`}>
         
         {/* 1. LOGO (Left) */}
         <div className="flex items-center gap-3 shrink-0">
@@ -46,7 +47,7 @@ export default function Navbar({ isScrolled: externalIsScrolled, alwaysScrolled 
        
           {/* About FinAsk */}
           <div className="group relative cursor-pointer h-full flex items-center">
-            <Link href="/about" className="group-hover:text-[#b08d55] transition-colors py-2 flex items-center gap-1">
+            <Link href="/about" className="group-hover:text-[#b08d55] text-[15px]  transition-colors py-2 flex items-center gap-1">
               About
             
             </Link>
@@ -55,7 +56,7 @@ export default function Navbar({ isScrolled: externalIsScrolled, alwaysScrolled 
 
           {/* Our Services (Mega Menu) */}
           <div className="group cursor-pointer h-full flex items-center">
-            <span className="group-hover:text-[#b08d55] transition-colors py-2 flex items-center gap-1">
+            <span className="group-hover:text-[#b08d55]  text-[15px] transition-colors py-2 flex items-center gap-1">
               Services
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-rotate-180 opacity-70">
                 <path d="m6 9 6 6 6-6"/>
@@ -188,26 +189,26 @@ export default function Navbar({ isScrolled: externalIsScrolled, alwaysScrolled 
 
           {/* Portfolio */}
            <div className="group relative cursor-pointer h-full flex items-center">
-            <span className="group-hover:text-[#b08d55] transition-colors py-2 flex items-center gap-1">
+            <span className="group-hover:text-[#b08d55]  text-[15px] transition-colors py-2 flex items-center gap-1">
               Values
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-rotate-180 opacity-70">
                 <path d="m6 9 6 6 6-6"/>
               </svg>
             </span>
-            <div className={`absolute top-full left-0 mt-5.5 w-56 shadow-xl rounded-b-xl ring-1 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out z-50 overflow-hidden border ${isScrolled ? "bg-white ring-black/5 text-slate-600 border-gray-100" : "bg-[#1a202c] ring-white/10 text-gray-300 border-white/10"}`}>
+            <div className={`absolute top-full left-0 mt-5.5 w-64 shadow-xl rounded-b-xl ring-1 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out z-50 overflow-hidden border ${isScrolled ? "bg-white ring-black/5 text-slate-600 border-gray-100" : "bg-[#1a202c] ring-white/10 text-gray-300 border-white/10"}`}>
               <ul className="py-2 text-sm">
-                {["Caring", "Transparency", "Spam-Free Culture", "Growth Mindset", "Co-Creation of Wealth", "Collaboration", "Customer Obsession"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className={`block px-5 py-2.5 transition-colors ${isScrolled ? "hover:bg-gray-50 hover:text-[#b08d55]" : "hover:bg-white/5 hover:text-[#b08d55]"}`}>
-                      {item}
-                    </a>
+                {valuesData.map((item) => (
+                  <li key={item.slug}>
+                    <Link href={`/values/${item.slug}`} className={`block px-5 py-2.5 transition-colors ${isScrolled ? "hover:bg-gray-50 hover:text-[#b08d55]" : "hover:bg-white/5 hover:text-[#b08d55]"}`}>
+                      {item.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-           <Link href="/careers" className="hover:text-[#b08d55] transition-colors">Careers</Link>
+           <Link href="/careers" className="hover:text-[#b08d55]  text-[15px] transition-colors">Careers</Link>
         </div>
 
         {/* 3. RIGHT ACTION (Contact Button + Hamburger) */}

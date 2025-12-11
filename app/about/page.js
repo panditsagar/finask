@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import CTASection from "@/components/CTASection";
 
 export default function AboutPage() {
   return (
@@ -291,37 +292,7 @@ export default function AboutPage() {
       {/* ----------------------------- */}
       {/*        PARTNERSHIP CTA        */}
       {/* ----------------------------- */}
-      <section id="mission" className="py-32 px-6 md:px-12 relative overflow-hidden">
-        {/* Background Image with Parallax feel */}
-        <div className="absolute inset-0 z-0">
-             <Image 
-                src="/banner1.webp" 
-                alt="Partnership" 
-                fill 
-                className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[#0b1218]/90" />
-        </div>
-
-        <div className="max-w-4xl mx-auto text-center relative z-10 text-white">
-            <h2 className="font-serif text-4xl md:text-6xl mb-8 leading-tight">
-                A Partnership <br/> <span className="text-[#b08d55]">Across Generations</span>
-            </h2>
-            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-                Success is never about how many clients we serve. It’s about how many lives continue seamlessly.
-            </p>
-
-            <div className="inline-block p-1 rounded-full bg-gradient-to-r from-[#b08d55] to-[#dfa882]">
-                <div className="bg-[#0b1218] rounded-full p-2">
-                    <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-[#b08d55] text-white rounded-full font-bold uppercase tracking-wider hover:bg-[#9a7b4f] transition-all shadow-lg hover:shadow-[#b08d55]/50">
-                        Start a Conversation
-                    </a>
-                </div>
-            </div>
-            
-            <p className="mt-8 text-sm text-gray-500 uppercase tracking-widest">No urgency. No obligations.</p>
-        </div>
-      </section>
+      <CTASection />
 
       <Footer />
     </main>

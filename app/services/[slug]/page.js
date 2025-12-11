@@ -4,6 +4,7 @@ import { use, useState } from "react";
 import { getServiceBySlug, getAllServices } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -301,6 +302,7 @@ export default function ServicePage({ params }) {
         </div>
       </section>
 
+      <CTASection />
       <Footer />
     </main>
   );

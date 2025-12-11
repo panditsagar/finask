@@ -56,7 +56,7 @@ export default function TestimonialSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 pb-30 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-40 items-center justify-center">
           
