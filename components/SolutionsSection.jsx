@@ -38,7 +38,7 @@ export default function SolutionsSection() {
       </div>
 
       {/* Image & Content Box */}
-      <div className="relative h-[600px] mx-4 lg:mx-16 rounded-xl overflow-hidden bg-slate-900">
+      <div className="relative h-[600px] mx-4 lg:mx-16  overflow-hidden bg-slate-900">
         {/* Background Image Placeholder */}
         {/* Replace the style below with your actual image: backgroundImage: 'url(/path/to/image.jpg)' */}
         <div 

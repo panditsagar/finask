@@ -1,104 +1,92 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section className="relative py-20 bg-white text-slate-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-           {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-slate-900 font-serif tracking-tight">
-            About
-         <span className="text-[#b08d55]"> Us</span>
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-lg">
-          We help you simplify your finances and achieve your goals.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <section className="relative py-24 bg-white overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-[#b08d55]/5 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-slate-50 rounded-full blur-3xl opacity-50"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          {/* LEFT: Image Collage */}
-          {/* LEFT: Image */}
+          {/* LEFT: Image Composition */}
           <div className="relative group">
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image
+             {/* Main Image */}
+            <div className="relative z-10   overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100">
+               <Image
                 src="/about-team.png"
-                alt="Finask Team Meeting"
+                alt="Finask Team"
                 width={800}
                 height={600}
-                className="object-cover w-full h-[500px] transform transition-transform duration-700 group-hover:scale-105"
+                className="object-cover w-full h-[500px] lg:h-[600px] transform group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
 
-            {/* Secondary smaller image (floating) */}
-            <div className="absolute -bottom-10 -right-10 z-20 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block group-hover:scale-105 transition-transform duration-500">
-               <Image
-                 src="/about-detail.png"
-                 alt="Handshake"
-                 width={200}
-                 height={200}
-                 className="object-cover w-full h-full"
-               />
+             {/* Floating Badge/Card */}
+            <div className="absolute -bottom-8 -right-8 z-20 w-48 h-48  overflow-hidden shadow-2xl border-4 border-white hidden md:block transform group-hover:-translate-y-2 transition-transform duration-500 delay-100">
+                <Image
+                  src="/about-detail.png"
+                  alt="Finask Detail"
+                  width={200}
+                  height={200}
+                  className="object-cover w-full h-full"
+                />
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#b08d55]/10 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#b08d55]/10 rounded-full blur-3xl -z-10"></div>
+             
+             {/* Abstract Decor */}
+             <div className="absolute -top-6 -left-6 z-0 w-24 h-24 border-2 border-[#b08d55]/20 rounded-full"></div>
+             <div className="absolute z-0 -bottom-10 -right-10 w-64 h-64 bg-[#b08d55]/10 rounded-full blur-2xl"></div>
           </div>
 
           {/* RIGHT: Content */}
-          <div className="space-y-8  ">
-            
-          
-
-            
-
-            {/* Description */}
-            <div className="text-gray-600 text-lg leading-relaxed space-y-6">
-              <p>
-                Wealth is not a balance sheet. It is a child’s future funded without stress. A retirement that gives back more than it takes. It is the joy of giving, the calm of knowing, the quiet power of being prepared.
-              </p>
-              <p>
-                At FinAsk, we believe that wealth is not just grown. It is stewarded—with care, with clarity, and with character. <span className="font-semibold text-slate-800">Built in India. Designed for lives that dream bigger.</span>
-              </p>
-              
-              <div className="pl-6 border-l-4 border-[#b08d55]/30 italic text-slate-700">
-                "Because numbers don’t drive us. People do."
-              </div>
-
-              <p>
-                Our clients are not accounts. They are stories in motion:
-              </p>
-              <ul className="space-y-3 list-none pl-2">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#b08d55] shrink-0"></span>
-                  <span>A mother protecting her child’s future.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#b08d55] shrink-0"></span>
-                  <span>A founder transitioning wealth across generations.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#b08d55] shrink-0"></span>
-                  <span>A young couple dreaming of a home.</span>
-                </li>
-              </ul>
-
-              <p>
-                Our role is to listen before we advise. To simplify before we sell. And to remain present—quietly, consistently, and with care that never clocks out.
-              </p>
+          <div className="space-y-10">
+            <div className="space-y-4">
+               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#b08d55]/10 text-[#b08d55] text-sm font-semibold tracking-wide uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#b08d55]"></span>
+                  About Finask
+               </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-serif leading-tight">
+                More than numbers. <br/>
+                <span className="text-[#b08d55]">Stories of life.</span>
+              </h2>
             </div>
 
+            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>
+                   Wealth is not just a balance sheet. It is a child’s future funded without stress, a retirement that gives back more than it takes, and the quiet power of being prepared.
+                </p>
+                <p>
+                   At FinAsk, we believe wealth must be stewarded with care, clarity, and character. Built in India, designed for lives that dream bigger.
+                </p>
+            </div>
 
+            {/* Story Cards */}
+            <div className="grid gap-3">
+                {[
+                    { title: "The Protector", desc: "A mother securing her child’s future." },
+                    { title: "The Builder", desc: "A founder transitioning wealth across generations." },
+                    { title: "The Dreamer", desc: "A young couple investing in their first home." },
+                ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100/60 hover:border-[#b08d55]/30 hover:bg-[#b08d55]/5 transition-all duration-300 group/card">
+                        <div className="w-2 h-2 rounded-full bg-[#b08d55] shrink-0 group-hover/card:scale-150 transition-transform"></div>
+                        <div>
+                            <span className="font-semibold text-slate-900 mr-2">{item.title}:</span>
+                            <span className="text-slate-600">{item.desc}</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
 
-            {/* Button */}
-            <div className="pt-4">
-              <a href="#" className="inline-flex items-center gap-2 bg-[#b08d55] hover:bg-[#9a7b4f] text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-[#b08d55]/30">
-                More About Us
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+            <div className="pt-2">
+                 <Link href="/about" className="inline-flex items-center gap-3 bg-[#b08d55] hover:bg-[#967645] text-white px-8 py-3.5 rounded-lg font-semibold transition-all shadow-lg shadow-[#b08d55]/20 group">
+                    Read Our Story
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                 </Link>
             </div>
 
           </div>
